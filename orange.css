@@ -10,7 +10,9 @@ body {
   animation: bgcolor infinite 10s;
 }
 
-.header{
+.header {
+  overflow: hidden;
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,6 +24,7 @@ body {
   color: #fff;
   padding: 20px;
 }
+
 
 .nav-toggle {
   display: none;
@@ -43,23 +46,25 @@ body {
 }
 
 .nav-holder{
-
 }
 
 @media (max-width: 750px){
 .nav-holder {
-  display: none;
-  position: absolute;
+  opacity: 0;
+  transform: translate(100%, 0px);
+  position: fixed;
   top: 0;
   right: 0;
   width: 250px;
   height: 100%;
   background-color: cadetblue;
+  transition: transform 400ms ease-in;
   }
 }
 
 .nav-holder-active{
-  display: block;
+    opacity: 1;
+    transform: translate(0, 0px);
 }
 
 .nav {
